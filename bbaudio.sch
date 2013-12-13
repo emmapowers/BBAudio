@@ -5475,6 +5475,12 @@ We've spent an enormous amount of time creating and checking these footprints an
 <text x="-2.54" y="-5.08" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
 <pin name="+12V" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
 </symbol>
+<symbol name="VCC">
+<wire x1="1.27" y1="-1.905" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="-1.27" y2="-1.905" width="0.254" layer="94"/>
+<text x="-2.54" y="-2.54" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<pin name="VCC" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="+12V" prefix="P+">
@@ -5484,6 +5490,76 @@ We've spent an enormous amount of time creating and checking these footprints an
 </gates>
 <devices>
 <device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="VCC" prefix="P+">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="VCC" symbol="VCC" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="nonolith">
+<packages>
+<package name="SOT23-3">
+<description>&lt;b&gt;Small Outline Transistor&lt;/b&gt;&lt;p&gt;
+package type OT</description>
+<wire x1="1.422" y1="0.81" x2="1.422" y2="-0.81" width="0.1524" layer="21"/>
+<wire x1="1.422" y1="-0.81" x2="-1.422" y2="-0.81" width="0.1524" layer="51"/>
+<wire x1="-1.422" y1="-0.81" x2="-1.422" y2="0.81" width="0.1524" layer="21"/>
+<wire x1="-1.422" y1="0.81" x2="1.422" y2="0.81" width="0.1524" layer="51"/>
+<wire x1="-0.522" y1="0.81" x2="0.522" y2="0.81" width="0.1524" layer="21"/>
+<wire x1="-0.428" y1="-0.81" x2="-0.522" y2="-0.81" width="0.1524" layer="21"/>
+<wire x1="0.522" y1="-0.81" x2="0.428" y2="-0.81" width="0.1524" layer="21"/>
+<wire x1="-1.328" y1="-0.81" x2="-1.422" y2="-0.81" width="0.1524" layer="21"/>
+<wire x1="1.422" y1="-0.81" x2="1.328" y2="-0.81" width="0.1524" layer="21"/>
+<wire x1="1.328" y1="0.81" x2="1.422" y2="0.81" width="0.1524" layer="21"/>
+<wire x1="-1.422" y1="0.81" x2="-1.328" y2="0.81" width="0.1524" layer="21"/>
+<smd name="3" x="0" y="-1.3" dx="0.55" dy="1.2" layer="1"/>
+<smd name="1" x="0.95" y="1.3" dx="0.55" dy="1.2" layer="1"/>
+<smd name="2" x="-0.95" y="1.3" dx="0.55" dy="1.2" layer="1"/>
+<text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.905" y="-3.429" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.25" y1="-1.5" x2="0.25" y2="-0.85" layer="51"/>
+<rectangle x1="0.7" y1="0.85" x2="1.2" y2="1.5" layer="51"/>
+<rectangle x1="-1.2" y1="0.85" x2="-0.7" y2="1.5" layer="51"/>
+</package>
+</packages>
+<symbols>
+<symbol name="VREG">
+<wire x1="-5.08" y1="5.08" x2="-5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-5.08" x2="5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="5.08" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
+<pin name="VIN" x="-10.16" y="0" length="middle"/>
+<pin name="GND" x="10.16" y="-2.54" length="middle" rot="R180"/>
+<pin name="VO" x="10.16" y="2.54" length="middle" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="VREG">
+<gates>
+<gate name="G$1" symbol="VREG" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOT23-3">
+<connects>
+<connect gate="G$1" pin="GND" pad="1"/>
+<connect gate="G$1" pin="VIN" pad="3"/>
+<connect gate="G$1" pin="VO" pad="2"/>
+</connects>
 <technologies>
 <technology name=""/>
 </technologies>
@@ -5537,18 +5613,11 @@ We've spent an enormous amount of time creating and checking these footprints an
 <part name="R8" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="56"/>
 <part name="R9" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="56"/>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-LETTER" device=""/>
-<part name="C3" library="rcl" deviceset="C-EU" device="C0603" value="1uF"/>
-<part name="C4" library="sparkfun" deviceset="CAP_POL" device="1206" value="10uF"/>
-<part name="GND7" library="sparkfun" deviceset="GND" device=""/>
-<part name="P+5" library="sparkfun" deviceset="3.3V" device=""/>
-<part name="U1" library="sparkfun" deviceset="V_REG_MIC2920" device=""/>
 <part name="U$10" library="sparkfun" deviceset="1.8V" device=""/>
 <part name="C1" library="rcl" deviceset="C-EU" device="C0603" value="1uF"/>
 <part name="C2" library="sparkfun" deviceset="CAP_POL" device="1206" value="10uF"/>
 <part name="GND2" library="sparkfun" deviceset="GND" device=""/>
-<part name="P+1" library="sparkfun" deviceset="3.3V" device=""/>
 <part name="U2" library="sparkfun" deviceset="V_REG_MIC2920" device=""/>
-<part name="U$3" library="sparkfun" deviceset="5V" device=""/>
 <part name="U3" library="SparkFun-PowerIC" deviceset="LMZ14203" device=""/>
 <part name="C5" library="sparkfun" deviceset="CAP_POL" device="1206" value="10uF"/>
 <part name="C6" library="sparkfun" deviceset="CAP_POL" device="1206" value="100uF"/>
@@ -5562,6 +5631,14 @@ We've spent an enormous amount of time creating and checking these footprints an
 <part name="C9" library="rcl" deviceset="C-EU" device="C0603" value="22pF"/>
 <part name="R4" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="1.07k"/>
 <part name="U$4" library="sparkfun" deviceset="5V" device=""/>
+<part name="P+7" library="supply1" deviceset="+12V" device=""/>
+<part name="P+1" library="supply1" deviceset="VCC" device="" value="AVCC"/>
+<part name="C7" library="rcl" deviceset="C-EU" device="C0603" value="1uF"/>
+<part name="C10" library="sparkfun" deviceset="CAP_POL" device="1206" value="10uF"/>
+<part name="GND12" library="sparkfun" deviceset="GND" device=""/>
+<part name="P+8" library="sparkfun" deviceset="3.3V" device=""/>
+<part name="U4" library="nonolith" deviceset="VREG" device=""/>
+<part name="GND13" library="sparkfun" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5608,18 +5685,11 @@ We've spent an enormous amount of time creating and checking these footprints an
 <instance part="R9" gate="G$1" x="-30.48" y="27.94"/>
 <instance part="FRAME1" gate="G$1" x="-78.74" y="-109.22"/>
 <instance part="FRAME1" gate="G$2" x="68.58" y="-109.22"/>
-<instance part="C3" gate="G$1" x="-25.4" y="-142.24"/>
-<instance part="C4" gate="G$1" x="0" y="-142.24"/>
-<instance part="GND7" gate="1" x="-12.7" y="-154.94"/>
-<instance part="P+5" gate="G$1" x="-25.4" y="-129.54" rot="MR0"/>
-<instance part="U1" gate="G$1" x="-12.7" y="-134.62"/>
-<instance part="U$10" gate="G$1" x="0" y="-129.54"/>
+<instance part="U$10" gate="G$1" x="-30.48" y="-127"/>
 <instance part="C1" gate="G$1" x="-73.66" y="-142.24"/>
 <instance part="C2" gate="G$1" x="-48.26" y="-142.24"/>
 <instance part="GND2" gate="1" x="-60.96" y="-154.94"/>
-<instance part="P+1" gate="G$1" x="-48.26" y="-129.54" rot="MR0"/>
 <instance part="U2" gate="G$1" x="-60.96" y="-134.62"/>
-<instance part="U$3" gate="G$1" x="-73.66" y="-129.54"/>
 <instance part="U3" gate="G$1" x="-40.64" y="-185.42"/>
 <instance part="C5" gate="G$1" x="-76.2" y="-200.66"/>
 <instance part="C6" gate="G$1" x="0" y="-185.42"/>
@@ -5633,6 +5703,14 @@ We've spent an enormous amount of time creating and checking these footprints an
 <instance part="C9" gate="G$1" x="-10.16" y="-193.04" rot="R270"/>
 <instance part="R4" gate="G$1" x="-17.78" y="-203.2" rot="R90"/>
 <instance part="U$4" gate="G$1" x="0" y="-172.72"/>
+<instance part="P+7" gate="1" x="-73.66" y="-127"/>
+<instance part="P+1" gate="VCC" x="-48.26" y="-127"/>
+<instance part="C7" gate="G$1" x="-30.48" y="-142.24"/>
+<instance part="C10" gate="G$1" x="-2.54" y="-142.24"/>
+<instance part="GND12" gate="1" x="-17.78" y="-154.94"/>
+<instance part="P+8" gate="G$1" x="-2.54" y="-127" rot="MR0"/>
+<instance part="U4" gate="G$1" x="-17.78" y="-134.62" rot="MR180"/>
+<instance part="GND13" gate="1" x="-5.08" y="-134.62"/>
 </instances>
 <busses>
 </busses>
@@ -5749,19 +5827,6 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="157.48" y1="-2.54" x2="157.48" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="0" y1="-149.86" x2="0" y2="-147.32" width="0.1524" layer="91"/>
-<wire x1="-12.7" y1="-149.86" x2="0" y2="-149.86" width="0.1524" layer="91"/>
-<wire x1="-12.7" y1="-149.86" x2="-12.7" y2="-152.4" width="0.1524" layer="91"/>
-<wire x1="-12.7" y1="-149.86" x2="-25.4" y2="-149.86" width="0.1524" layer="91"/>
-<wire x1="-25.4" y1="-149.86" x2="-25.4" y2="-147.32" width="0.1524" layer="91"/>
-<wire x1="-12.7" y1="-142.24" x2="-12.7" y2="-149.86" width="0.1524" layer="91"/>
-<junction x="-12.7" y="-149.86"/>
-<pinref part="C3" gate="G$1" pin="2"/>
-<pinref part="GND7" gate="1" pin="GND"/>
-<pinref part="C4" gate="G$1" pin="-"/>
-<pinref part="U1" gate="G$1" pin="GND"/>
-</segment>
-<segment>
 <wire x1="-48.26" y1="-149.86" x2="-48.26" y2="-147.32" width="0.1524" layer="91"/>
 <wire x1="-60.96" y1="-149.86" x2="-48.26" y2="-149.86" width="0.1524" layer="91"/>
 <wire x1="-60.96" y1="-149.86" x2="-60.96" y2="-152.4" width="0.1524" layer="91"/>
@@ -5803,6 +5868,22 @@ We've spent an enormous amount of time creating and checking these footprints an
 <pinref part="GND11" gate="1" pin="GND"/>
 <wire x1="0" y1="-190.5" x2="0" y2="-200.66" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<wire x1="-2.54" y1="-149.86" x2="-2.54" y2="-147.32" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="-149.86" x2="-2.54" y2="-149.86" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="-149.86" x2="-17.78" y2="-152.4" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="-149.86" x2="-30.48" y2="-149.86" width="0.1524" layer="91"/>
+<wire x1="-30.48" y1="-149.86" x2="-30.48" y2="-147.32" width="0.1524" layer="91"/>
+<junction x="-17.78" y="-149.86"/>
+<pinref part="C7" gate="G$1" pin="2"/>
+<pinref part="GND12" gate="1" pin="GND"/>
+<pinref part="C10" gate="G$1" pin="-"/>
+</segment>
+<segment>
+<wire x1="-7.62" y1="-132.08" x2="-5.08" y2="-132.08" width="0.1524" layer="91"/>
+<pinref part="U4" gate="G$1" pin="GND"/>
+<pinref part="GND13" gate="1" pin="GND"/>
+</segment>
 </net>
 <net name="1.8V" class="0">
 <segment>
@@ -5830,13 +5911,13 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="-50.8" y1="-60.96" x2="-45.72" y2="-60.96" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="0" y1="-139.7" x2="0" y2="-134.62" width="0.1524" layer="91"/>
-<wire x1="0" y1="-134.62" x2="-5.08" y2="-134.62" width="0.1524" layer="91"/>
-<pinref part="C4" gate="G$1" pin="+"/>
-<pinref part="U1" gate="G$1" pin="OUT"/>
+<wire x1="-30.48" y1="-139.7" x2="-30.48" y2="-134.62" width="0.1524" layer="91"/>
+<wire x1="-30.48" y1="-134.62" x2="-27.94" y2="-134.62" width="0.1524" layer="91"/>
+<pinref part="C7" gate="G$1" pin="1"/>
+<pinref part="U4" gate="G$1" pin="VIN"/>
 <pinref part="U$10" gate="G$1" pin="1.8V"/>
-<wire x1="0" y1="-129.54" x2="0" y2="-134.62" width="0.1524" layer="91"/>
-<junction x="0" y="-134.62"/>
+<wire x1="-30.48" y1="-127" x2="-30.48" y2="-134.62" width="0.1524" layer="91"/>
+<junction x="-30.48" y="-134.62"/>
 </segment>
 </net>
 <net name="3.3V" class="0">
@@ -5873,22 +5954,13 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="5.08" y1="7.62" x2="-2.54" y2="7.62" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="-25.4" y1="-139.7" x2="-25.4" y2="-134.62" width="0.1524" layer="91"/>
-<wire x1="-25.4" y1="-134.62" x2="-20.32" y2="-134.62" width="0.1524" layer="91"/>
-<pinref part="C3" gate="G$1" pin="1"/>
-<pinref part="U1" gate="G$1" pin="IN"/>
-<pinref part="P+5" gate="G$1" pin="3.3V"/>
-<wire x1="-25.4" y1="-129.54" x2="-25.4" y2="-134.62" width="0.1524" layer="91"/>
-<junction x="-25.4" y="-134.62"/>
-</segment>
-<segment>
-<wire x1="-48.26" y1="-139.7" x2="-48.26" y2="-134.62" width="0.1524" layer="91"/>
-<wire x1="-48.26" y1="-134.62" x2="-53.34" y2="-134.62" width="0.1524" layer="91"/>
-<pinref part="C2" gate="G$1" pin="+"/>
-<pinref part="U2" gate="G$1" pin="OUT"/>
-<pinref part="P+1" gate="G$1" pin="3.3V"/>
-<wire x1="-48.26" y1="-129.54" x2="-48.26" y2="-134.62" width="0.1524" layer="91"/>
-<junction x="-48.26" y="-134.62"/>
+<wire x1="-2.54" y1="-139.7" x2="-2.54" y2="-137.16" width="0.1524" layer="91"/>
+<wire x1="-7.62" y1="-137.16" x2="-2.54" y2="-137.16" width="0.1524" layer="91"/>
+<junction x="-2.54" y="-137.16"/>
+<pinref part="C10" gate="G$1" pin="+"/>
+<pinref part="U4" gate="G$1" pin="VO"/>
+<pinref part="P+8" gate="G$1" pin="3.3V"/>
+<wire x1="-2.54" y1="-127" x2="-2.54" y2="-137.16" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SEL1" class="0">
@@ -5949,15 +6021,6 @@ We've spent an enormous amount of time creating and checking these footprints an
 <pinref part="U$1" gate="G$1" pin="VDD_5V@1"/>
 <pinref part="U$7" gate="G$1" pin="5V"/>
 <wire x1="81.28" y1="-7.62" x2="71.12" y2="-7.62" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<wire x1="-73.66" y1="-139.7" x2="-73.66" y2="-134.62" width="0.1524" layer="91"/>
-<wire x1="-73.66" y1="-134.62" x2="-68.58" y2="-134.62" width="0.1524" layer="91"/>
-<pinref part="C1" gate="G$1" pin="1"/>
-<pinref part="U2" gate="G$1" pin="IN"/>
-<pinref part="U$3" gate="G$1" pin="5V"/>
-<wire x1="-73.66" y1="-129.54" x2="-73.66" y2="-134.62" width="0.1524" layer="91"/>
-<junction x="-73.66" y="-134.62"/>
 </segment>
 <segment>
 <pinref part="U3" gate="G$1" pin="VOUT"/>
@@ -6133,6 +6196,15 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="-73.66" y1="-193.04" x2="-76.2" y2="-193.04" width="0.1524" layer="91"/>
 <junction x="-76.2" y="-193.04"/>
 </segment>
+<segment>
+<wire x1="-73.66" y1="-139.7" x2="-73.66" y2="-134.62" width="0.1524" layer="91"/>
+<wire x1="-73.66" y1="-134.62" x2="-68.58" y2="-134.62" width="0.1524" layer="91"/>
+<pinref part="C1" gate="G$1" pin="1"/>
+<pinref part="U2" gate="G$1" pin="IN"/>
+<pinref part="P+7" gate="1" pin="+12V"/>
+<wire x1="-73.66" y1="-129.54" x2="-73.66" y2="-134.62" width="0.1524" layer="91"/>
+<junction x="-73.66" y="-134.62"/>
+</segment>
 </net>
 <net name="N$6" class="0">
 <segment>
@@ -6172,6 +6244,17 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="-17.78" y1="-193.04" x2="-17.78" y2="-198.12" width="0.1524" layer="91"/>
 <junction x="-17.78" y="-193.04"/>
 <pinref part="R4" gate="G$1" pin="2"/>
+</segment>
+</net>
+<net name="VCC" class="0">
+<segment>
+<wire x1="-48.26" y1="-139.7" x2="-48.26" y2="-134.62" width="0.1524" layer="91"/>
+<wire x1="-48.26" y1="-134.62" x2="-53.34" y2="-134.62" width="0.1524" layer="91"/>
+<pinref part="C2" gate="G$1" pin="+"/>
+<pinref part="U2" gate="G$1" pin="OUT"/>
+<pinref part="P+1" gate="VCC" pin="VCC"/>
+<wire x1="-48.26" y1="-129.54" x2="-48.26" y2="-134.62" width="0.1524" layer="91"/>
+<junction x="-48.26" y="-134.62"/>
 </segment>
 </net>
 </nets>
