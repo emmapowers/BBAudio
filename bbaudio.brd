@@ -1420,14 +1420,14 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="CLOCK_SPEED" library="DCO_PIGGY" package="SPARKFUN_PDB12" value="" x="17.78" y="99.06"/>
-<element name="CLOCK_OUT" library="erthenvar" package="ERTHENVAR-JACK" value="AUDIO-JACKERTHENVAR" x="17.78" y="38.1"/>
-<element name="CLOCK_SPEED1" library="DCO_PIGGY" package="SPARKFUN_PDB12" value="" x="71.12" y="99.06"/>
-<element name="CLOCK_SPEED2" library="DCO_PIGGY" package="SPARKFUN_PDB12" value="" x="71.12" y="68.58"/>
-<element name="CLOCK_SPEED3" library="DCO_PIGGY" package="SPARKFUN_PDB12" value="" x="17.78" y="68.58"/>
-<element name="CLOCK_OUT1" library="erthenvar" package="ERTHENVAR-JACK" value="AUDIO-JACKERTHENVAR" x="71.12" y="15.24"/>
-<element name="CLOCK_OUT2" library="erthenvar" package="ERTHENVAR-JACK" value="AUDIO-JACKERTHENVAR" x="17.78" y="15.24"/>
-<element name="CLOCK_OUT3" library="erthenvar" package="ERTHENVAR-JACK" value="AUDIO-JACKERTHENVAR" x="71.12" y="38.1"/>
+<element name="P1" library="DCO_PIGGY" package="SPARKFUN_PDB12" value="" x="17.78" y="99.06"/>
+<element name="J1" library="erthenvar" package="ERTHENVAR-JACK" value="AUDIO-JACKERTHENVAR" x="17.78" y="38.1"/>
+<element name="P3" library="DCO_PIGGY" package="SPARKFUN_PDB12" value="" x="71.12" y="99.06"/>
+<element name="P4" library="DCO_PIGGY" package="SPARKFUN_PDB12" value="" x="71.12" y="68.58"/>
+<element name="P2" library="DCO_PIGGY" package="SPARKFUN_PDB12" value="" x="17.78" y="68.58"/>
+<element name="J4" library="erthenvar" package="ERTHENVAR-JACK" value="AUDIO-JACKERTHENVAR" x="71.12" y="15.24"/>
+<element name="J2" library="erthenvar" package="ERTHENVAR-JACK" value="AUDIO-JACKERTHENVAR" x="17.78" y="15.24"/>
+<element name="J3" library="erthenvar" package="ERTHENVAR-JACK" value="AUDIO-JACKERTHENVAR" x="71.12" y="38.1"/>
 <element name="U$1" library="custom" package="BEAGLEBONE_SHIELD" value="BEAGLEBONE_OUTLINE" x="-10.16" y="1.27" rot="MR90"/>
 <element name="S1" library="switch-dil" package="P103" value="" x="43.18" y="81.28">
 <attribute name="OC_NEWARK" value="unknown" x="43.18" y="81.28" size="1.778" layer="27" font="vector" ratio="15" display="off"/>
@@ -1439,7 +1439,7 @@ design rules under a new name.</description>
 <element name="S3" library="sparkfun" package="TACTILE-PTH" value="SWITCH-MOMENTARY-2PTH" x="53.34" y="63.5" rot="R90"/>
 <element name="LED1" library="sparkfun" package="FKIT-LED-1206" value="" x="35.56" y="71.12"/>
 <element name="LED2" library="sparkfun" package="FKIT-LED-1206" value="" x="53.34" y="71.12"/>
-<element name="U$9" library="SparkFun-LED" package="LED-TRICOLOR-SMD" value="LED-TRICOLOR" x="44.45" y="96.52"/>
+<element name="LED3" library="SparkFun-LED" package="LED-TRICOLOR-SMD" value="LED-TRICOLOR" x="44.45" y="96.52"/>
 <element name="R5" library="SparkFun-Passives" package="0603-RES" value="220" x="43.18" y="91.44" rot="R90"/>
 <element name="R6" library="SparkFun-Passives" package="0603-RES" value="56" x="49.53" y="97.79" rot="R90"/>
 <element name="R7" library="SparkFun-Passives" package="0603-RES" value="56" x="40.64" y="97.79" rot="R90"/>
@@ -1473,10 +1473,10 @@ design rules under a new name.</description>
 <contactref element="U$1" pad="92"/>
 <contactref element="U$1" pad="1"/>
 <contactref element="U$1" pad="2"/>
-<contactref element="CLOCK_SPEED" pad="1"/>
-<contactref element="CLOCK_SPEED2" pad="1"/>
-<contactref element="CLOCK_SPEED1" pad="1"/>
-<contactref element="CLOCK_SPEED3" pad="1"/>
+<contactref element="P1" pad="1"/>
+<contactref element="P4" pad="1"/>
+<contactref element="P3" pad="1"/>
+<contactref element="P2" pad="1"/>
 <contactref element="U$1" pad="1"/>
 <contactref element="U$1" pad="2"/>
 <contactref element="U$1" pad="89"/>
@@ -1520,30 +1520,30 @@ design rules under a new name.</description>
 <contactref element="U$1" pad="53"/>
 </signal>
 <signal name="KNOB1">
-<contactref element="CLOCK_SPEED2" pad="2"/>
 <contactref element="U$1" pad="85"/>
-<wire x1="57.15" y1="53.975" x2="71.12" y2="58.58" width="0" layer="19" extent="1-1"/>
+<contactref element="P1" pad="2"/>
+<wire x1="17.78" y1="89.06" x2="57.15" y2="53.975" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="KNOB2">
-<contactref element="CLOCK_SPEED1" pad="2"/>
 <contactref element="U$1" pad="86"/>
-<wire x1="57.15" y1="51.435" x2="71.12" y2="89.06" width="0" layer="19" extent="1-1"/>
+<contactref element="P2" pad="2"/>
+<wire x1="17.78" y1="58.58" x2="57.15" y2="51.435" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="KNOB3">
-<contactref element="CLOCK_SPEED3" pad="2"/>
 <contactref element="U$1" pad="83"/>
-<wire x1="17.78" y1="58.58" x2="54.61" y2="53.975" width="0" layer="19" extent="1-1"/>
+<contactref element="P3" pad="2"/>
+<wire x1="54.61" y1="53.975" x2="71.12" y2="89.06" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="KNOB4">
-<contactref element="CLOCK_SPEED" pad="2"/>
 <contactref element="U$1" pad="84"/>
-<wire x1="54.61" y1="51.435" x2="17.78" y2="89.06" width="0" layer="19" extent="1-1"/>
+<contactref element="P4" pad="2"/>
+<wire x1="54.61" y1="51.435" x2="71.12" y2="58.58" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="1.8V">
-<contactref element="CLOCK_SPEED" pad="3"/>
-<contactref element="CLOCK_SPEED2" pad="3"/>
-<contactref element="CLOCK_SPEED1" pad="3"/>
-<contactref element="CLOCK_SPEED3" pad="3"/>
+<contactref element="P1" pad="3"/>
+<contactref element="P4" pad="3"/>
+<contactref element="P3" pad="3"/>
+<contactref element="P2" pad="3"/>
 <contactref element="S1" pad="C"/>
 <contactref element="C7" pad="1"/>
 <contactref element="U4" pad="3"/>
@@ -1557,7 +1557,7 @@ design rules under a new name.</description>
 <signal name="3.3V">
 <contactref element="U$1" pad="49"/>
 <contactref element="U$1" pad="50"/>
-<contactref element="U$9" pad="A"/>
+<contactref element="LED3" pad="A"/>
 <contactref element="LED1" pad="A"/>
 <contactref element="LED2" pad="A"/>
 <contactref element="S2" pad="3"/>
@@ -1607,17 +1607,17 @@ design rules under a new name.</description>
 <wire x1="13.97" y1="53.975" x2="13.97" y2="51.435" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">
-<contactref element="U$9" pad="R"/>
+<contactref element="LED3" pad="R"/>
 <contactref element="R5" pad="2"/>
 <wire x1="43.18" y1="92.29" x2="43.75" y2="95.02" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$2">
-<contactref element="U$9" pad="B"/>
+<contactref element="LED3" pad="B"/>
 <contactref element="R6" pad="2"/>
 <wire x1="45.15" y1="98.02" x2="49.53" y2="98.64" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$3">
-<contactref element="U$9" pad="G"/>
+<contactref element="LED3" pad="G"/>
 <contactref element="R7" pad="2"/>
 <wire x1="40.64" y1="98.64" x2="43.75" y2="98.02" width="0" layer="19" extent="1-1"/>
 </signal>
