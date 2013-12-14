@@ -6040,14 +6040,14 @@ package type OT</description>
 </class>
 </classes>
 <parts>
-<part name="CLOCK_SPEED" library="DCO_PIGGY" deviceset="SPARKFUN_POT" device="PDB12"/>
-<part name="CLOCK_OUT" library="erthenvar" deviceset="AUDIO-JACK" device="ERTHENVAR"/>
-<part name="CLOCK_SPEED1" library="DCO_PIGGY" deviceset="SPARKFUN_POT" device="PDB12"/>
-<part name="CLOCK_SPEED2" library="DCO_PIGGY" deviceset="SPARKFUN_POT" device="PDB12"/>
-<part name="CLOCK_SPEED3" library="DCO_PIGGY" deviceset="SPARKFUN_POT" device="PDB12"/>
-<part name="CLOCK_OUT1" library="erthenvar" deviceset="AUDIO-JACK" device="ERTHENVAR"/>
-<part name="CLOCK_OUT2" library="erthenvar" deviceset="AUDIO-JACK" device="ERTHENVAR"/>
-<part name="CLOCK_OUT3" library="erthenvar" deviceset="AUDIO-JACK" device="ERTHENVAR"/>
+<part name="P1" library="DCO_PIGGY" deviceset="SPARKFUN_POT" device="PDB12"/>
+<part name="J1" library="erthenvar" deviceset="AUDIO-JACK" device="ERTHENVAR"/>
+<part name="P3" library="DCO_PIGGY" deviceset="SPARKFUN_POT" device="PDB12"/>
+<part name="P4" library="DCO_PIGGY" deviceset="SPARKFUN_POT" device="PDB12"/>
+<part name="P2" library="DCO_PIGGY" deviceset="SPARKFUN_POT" device="PDB12"/>
+<part name="J4" library="erthenvar" deviceset="AUDIO-JACK" device="ERTHENVAR"/>
+<part name="J2" library="erthenvar" deviceset="AUDIO-JACK" device="ERTHENVAR"/>
+<part name="J3" library="erthenvar" deviceset="AUDIO-JACK" device="ERTHENVAR"/>
 <part name="U$1" library="custom" deviceset="BEAGLEBONE_OUTLINE" device=""/>
 <part name="S1" library="switch-dil" deviceset="P103" device=""/>
 <part name="S2" library="sparkfun" deviceset="SWITCH-MOMENTARY-2" device="PTH"/>
@@ -6067,7 +6067,7 @@ package type OT</description>
 <part name="GND9" library="sparkfun" deviceset="GND" device=""/>
 <part name="U$7" library="sparkfun" deviceset="5V" device=""/>
 <part name="U$8" library="sparkfun" deviceset="5V" device=""/>
-<part name="U$9" library="SparkFun-LED" deviceset="LED-TRICOLOR" device=""/>
+<part name="LED3" library="SparkFun-LED" deviceset="LED-TRICOLOR" device=""/>
 <part name="R5" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="220"/>
 <part name="R6" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="56"/>
 <part name="R7" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="56"/>
@@ -6120,14 +6120,14 @@ package type OT</description>
 <text x="71.12" y="-261.62" size="1.778" layer="94">POWER</text>
 </plain>
 <instances>
-<instance part="CLOCK_SPEED" gate="G$1" x="10.16" y="-20.32"/>
-<instance part="CLOCK_OUT" gate="G$1" x="48.26" y="-287.02" rot="R180"/>
-<instance part="CLOCK_SPEED1" gate="G$1" x="-35.56" y="-20.32"/>
-<instance part="CLOCK_SPEED2" gate="G$1" x="-55.88" y="-20.32"/>
-<instance part="CLOCK_SPEED3" gate="G$1" x="-12.7" y="-20.32"/>
-<instance part="CLOCK_OUT1" gate="G$1" x="48.26" y="-276.86" rot="R180"/>
-<instance part="CLOCK_OUT2" gate="G$1" x="25.4" y="-276.86" rot="R180"/>
-<instance part="CLOCK_OUT3" gate="G$1" x="25.4" y="-287.02" rot="R180"/>
+<instance part="P1" gate="G$1" x="10.16" y="-20.32"/>
+<instance part="J1" gate="G$1" x="48.26" y="-287.02" rot="R180"/>
+<instance part="P3" gate="G$1" x="-35.56" y="-20.32"/>
+<instance part="P4" gate="G$1" x="-55.88" y="-20.32"/>
+<instance part="P2" gate="G$1" x="-12.7" y="-20.32"/>
+<instance part="J4" gate="G$1" x="48.26" y="-276.86" rot="R180"/>
+<instance part="J2" gate="G$1" x="25.4" y="-276.86" rot="R180"/>
+<instance part="J3" gate="G$1" x="25.4" y="-287.02" rot="R180"/>
 <instance part="U$1" gate="G$1" x="109.22" y="2.54"/>
 <instance part="S1" gate="1" x="-38.1" y="-60.96" rot="R270"/>
 <instance part="S2" gate="G$1" x="-7.62" y="17.78"/>
@@ -6147,7 +6147,7 @@ package type OT</description>
 <instance part="GND9" gate="1" x="157.48" y="-10.16"/>
 <instance part="U$7" gate="G$1" x="71.12" y="-7.62" rot="R90"/>
 <instance part="U$8" gate="G$1" x="144.78" y="-7.62" rot="R270"/>
-<instance part="U$9" gate="G$1" x="-10.16" y="55.88"/>
+<instance part="LED3" gate="G$1" x="-10.16" y="55.88"/>
 <instance part="R5" gate="G$1" x="-30.48" y="60.96"/>
 <instance part="R6" gate="G$1" x="-30.48" y="53.34"/>
 <instance part="R7" gate="G$1" x="-30.48" y="45.72"/>
@@ -6196,65 +6196,65 @@ package type OT</description>
 <nets>
 <net name="KNOB1" class="0">
 <segment>
-<pinref part="CLOCK_SPEED2" gate="G$1" pin="S"/>
-<wire x1="-50.8" y1="-20.32" x2="-40.64" y2="-20.32" width="0.1524" layer="91"/>
-<label x="-48.26" y="-20.32" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="U$1" gate="G$1" pin="AIN0"/>
 <wire x1="81.28" y1="-50.8" x2="68.58" y2="-50.8" width="0.1524" layer="91"/>
 <label x="68.58" y="-50.8" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="P1" gate="G$1" pin="S"/>
+<wire x1="15.24" y1="-20.32" x2="25.4" y2="-20.32" width="0.1524" layer="91"/>
+<label x="17.78" y="-20.32" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="KNOB2" class="0">
-<segment>
-<pinref part="CLOCK_SPEED1" gate="G$1" pin="S"/>
-<wire x1="-30.48" y1="-20.32" x2="-17.78" y2="-20.32" width="0.1524" layer="91"/>
-<label x="-27.94" y="-20.32" size="1.778" layer="95"/>
-</segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="AIN1"/>
 <wire x1="137.16" y1="-50.8" x2="149.86" y2="-50.8" width="0.1524" layer="91"/>
 <label x="142.24" y="-50.8" size="1.778" layer="95"/>
 </segment>
-</net>
-<net name="KNOB3" class="0">
 <segment>
-<pinref part="CLOCK_SPEED3" gate="G$1" pin="S"/>
+<pinref part="P2" gate="G$1" pin="S"/>
 <wire x1="-7.62" y1="-20.32" x2="5.08" y2="-20.32" width="0.1524" layer="91"/>
 <label x="-5.08" y="-20.32" size="1.778" layer="95"/>
 </segment>
+</net>
+<net name="KNOB3" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="AIN2"/>
 <wire x1="81.28" y1="-48.26" x2="68.58" y2="-48.26" width="0.1524" layer="91"/>
 <label x="68.58" y="-48.26" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="P3" gate="G$1" pin="S"/>
+<wire x1="-30.48" y1="-20.32" x2="-17.78" y2="-20.32" width="0.1524" layer="91"/>
+<label x="-27.94" y="-20.32" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="KNOB4" class="0">
-<segment>
-<pinref part="CLOCK_SPEED" gate="G$1" pin="S"/>
-<wire x1="15.24" y1="-20.32" x2="25.4" y2="-20.32" width="0.1524" layer="91"/>
-<label x="17.78" y="-20.32" size="1.778" layer="95"/>
-</segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="AIN3"/>
 <wire x1="137.16" y1="-48.26" x2="149.86" y2="-48.26" width="0.1524" layer="91"/>
 <label x="142.24" y="-48.26" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="P4" gate="G$1" pin="S"/>
+<wire x1="-50.8" y1="-20.32" x2="-40.64" y2="-20.32" width="0.1524" layer="91"/>
+<label x="-48.26" y="-20.32" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="CLOCK_SPEED" gate="G$1" pin="A"/>
+<pinref part="P1" gate="G$1" pin="A"/>
 <wire x1="10.16" y1="-27.94" x2="10.16" y2="-35.56" width="0.1524" layer="91"/>
 <wire x1="10.16" y1="-35.56" x2="-12.7" y2="-35.56" width="0.1524" layer="91"/>
-<pinref part="CLOCK_SPEED2" gate="G$1" pin="A"/>
+<pinref part="P4" gate="G$1" pin="A"/>
 <wire x1="-12.7" y1="-35.56" x2="-35.56" y2="-35.56" width="0.1524" layer="91"/>
 <wire x1="-35.56" y1="-35.56" x2="-55.88" y2="-35.56" width="0.1524" layer="91"/>
 <wire x1="-55.88" y1="-27.94" x2="-55.88" y2="-35.56" width="0.1524" layer="91"/>
-<pinref part="CLOCK_SPEED1" gate="G$1" pin="A"/>
+<pinref part="P3" gate="G$1" pin="A"/>
 <wire x1="-35.56" y1="-27.94" x2="-35.56" y2="-35.56" width="0.1524" layer="91"/>
 <junction x="-35.56" y="-35.56"/>
-<pinref part="CLOCK_SPEED3" gate="G$1" pin="A"/>
+<pinref part="P2" gate="G$1" pin="A"/>
 <wire x1="-12.7" y1="-27.94" x2="-12.7" y2="-35.56" width="0.1524" layer="91"/>
 <junction x="-12.7" y="-35.56"/>
 <pinref part="GND1" gate="1" pin="GND"/>
@@ -6372,17 +6372,17 @@ package type OT</description>
 </net>
 <net name="1.8V" class="0">
 <segment>
-<pinref part="CLOCK_SPEED" gate="G$1" pin="E"/>
+<pinref part="P1" gate="G$1" pin="E"/>
 <wire x1="10.16" y1="-12.7" x2="10.16" y2="-5.08" width="0.1524" layer="91"/>
 <wire x1="10.16" y1="-5.08" x2="-12.7" y2="-5.08" width="0.1524" layer="91"/>
-<pinref part="CLOCK_SPEED2" gate="G$1" pin="E"/>
+<pinref part="P4" gate="G$1" pin="E"/>
 <wire x1="-12.7" y1="-5.08" x2="-35.56" y2="-5.08" width="0.1524" layer="91"/>
 <wire x1="-35.56" y1="-5.08" x2="-55.88" y2="-5.08" width="0.1524" layer="91"/>
 <wire x1="-55.88" y1="-12.7" x2="-55.88" y2="-5.08" width="0.1524" layer="91"/>
-<pinref part="CLOCK_SPEED1" gate="G$1" pin="E"/>
+<pinref part="P3" gate="G$1" pin="E"/>
 <wire x1="-35.56" y1="-12.7" x2="-35.56" y2="-5.08" width="0.1524" layer="91"/>
 <junction x="-35.56" y="-5.08"/>
-<pinref part="CLOCK_SPEED3" gate="G$1" pin="E"/>
+<pinref part="P2" gate="G$1" pin="E"/>
 <wire x1="-12.7" y1="-12.7" x2="-12.7" y2="-5.08" width="0.1524" layer="91"/>
 <junction x="-12.7" y="-5.08"/>
 <pinref part="U$2" gate="G$1" pin="1.8V"/>
@@ -6419,7 +6419,7 @@ package type OT</description>
 <segment>
 <pinref part="P+4" gate="G$1" pin="3.3V"/>
 <wire x1="5.08" y1="55.88" x2="5.08" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="U$9" gate="G$1" pin="A"/>
+<pinref part="LED3" gate="G$1" pin="A"/>
 <wire x1="5.08" y1="53.34" x2="2.54" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="53.34" x2="5.08" y2="38.1" width="0.1524" layer="91"/>
 <junction x="5.08" y="53.34"/>
@@ -6528,7 +6528,7 @@ package type OT</description>
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="U$9" gate="G$1" pin="RED"/>
+<pinref part="LED3" gate="G$1" pin="RED"/>
 <wire x1="-20.32" y1="55.88" x2="-22.86" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="-22.86" y1="55.88" x2="-22.86" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="R5" gate="G$1" pin="2"/>
@@ -6537,14 +6537,14 @@ package type OT</description>
 </net>
 <net name="N$2" class="0">
 <segment>
-<pinref part="U$9" gate="G$1" pin="BLU"/>
+<pinref part="LED3" gate="G$1" pin="BLU"/>
 <pinref part="R6" gate="G$1" pin="2"/>
 <wire x1="-20.32" y1="53.34" x2="-25.4" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
 <segment>
-<pinref part="U$9" gate="G$1" pin="GRN"/>
+<pinref part="LED3" gate="G$1" pin="GRN"/>
 <wire x1="-20.32" y1="50.8" x2="-22.86" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="-22.86" y1="50.8" x2="-22.86" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="R7" gate="G$1" pin="2"/>
