@@ -5661,6 +5661,23 @@ package type OT</description>
 <wire x1="3" y1="-3.5" x2="3.5" y2="-3" width="0.127" layer="21"/>
 <wire x1="-3" y1="-3.5" x2="-3.5" y2="-3" width="0.127" layer="21"/>
 </package>
+<package name="4PIN">
+<smd name="P$1" x="-2.54" y="-2.1" dx="1.8" dy="2" layer="1"/>
+<smd name="P$2" x="2.54" y="-2.1" dx="1.8" dy="2" layer="1"/>
+<smd name="P$3" x="2.54" y="2.1" dx="1.8" dy="2" layer="1"/>
+<smd name="P$4" x="-2.54" y="2.1" dx="1.8" dy="2" layer="1"/>
+<text x="-3" y="4" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3" y="-5" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="-3.75" y1="2.6" x2="3.75" y2="2.6" width="0.127" layer="51"/>
+<wire x1="3.75" y1="2.6" x2="3.75" y2="-2.6" width="0.127" layer="51"/>
+<wire x1="3.75" y1="-2.6" x2="-3.75" y2="-2.6" width="0.127" layer="51"/>
+<wire x1="-3.75" y1="-2.6" x2="-3.75" y2="2.6" width="0.127" layer="51"/>
+<wire x1="-1.2" y1="2.7" x2="1.3" y2="2.7" width="0.254" layer="21"/>
+<wire x1="3.7" y1="2.5" x2="3.7" y2="-2.5" width="0.254" layer="21"/>
+<wire x1="1.4" y1="-2.6" x2="-1.4" y2="-2.6" width="0.254" layer="21"/>
+<wire x1="-3.8" y1="-2.5" x2="-3.8" y2="2.5" width="0.254" layer="21"/>
+<circle x="-4.5" y="-2.1" radius="0.254" width="0.254" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="TLV320AIC3106">
@@ -5716,6 +5733,18 @@ package type OT</description>
 <text x="-15.24" y="43.18" size="1.27" layer="95">&gt;NAME</text>
 <text x="-12.7" y="-35.56" size="1.27" layer="96">&gt;VALUE</text>
 </symbol>
+<symbol name="FXO_HC73">
+<wire x1="-7.62" y1="7.62" x2="7.62" y2="7.62" width="0.254" layer="94"/>
+<wire x1="7.62" y1="7.62" x2="7.62" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-10.16" x2="-7.62" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-10.16" x2="-7.62" y2="7.62" width="0.254" layer="94"/>
+<pin name="EN" x="-12.7" y="2.54" length="middle"/>
+<pin name="GND" x="-12.7" y="-5.08" length="middle"/>
+<pin name="VDD" x="12.7" y="2.54" length="middle" rot="R180"/>
+<pin name="OUT" x="12.7" y="-5.08" length="middle" rot="R180"/>
+<text x="-7.62" y="7.62" size="1.778" layer="95">&gt;NAME</text>
+<text x="-7.62" y="-12.7" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="TLV320AIC3106" prefix="IC">
@@ -5770,6 +5799,24 @@ package type OT</description>
 <connect gate="G$1" pin="SDA" pad="2"/>
 <connect gate="G$1" pin="SELECT" pad="43"/>
 <connect gate="G$1" pin="WCLK" pad="39"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="FXO_HC73">
+<gates>
+<gate name="G$1" symbol="FXO_HC73" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="4PIN">
+<connects>
+<connect gate="G$1" pin="EN" pad="P$1"/>
+<connect gate="G$1" pin="GND" pad="P$2"/>
+<connect gate="G$1" pin="OUT" pad="P$3"/>
+<connect gate="G$1" pin="VDD" pad="P$4"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -6060,6 +6107,7 @@ package type OT</description>
 <part name="P+5" library="supply1" deviceset="+12V" device=""/>
 <part name="P-1" library="supply1" deviceset="-12V" device=""/>
 <part name="GND7" library="sparkfun" deviceset="GND" device=""/>
+<part name="U$5" library="codec" deviceset="FXO_HC73" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -6141,6 +6189,7 @@ package type OT</description>
 <instance part="P+5" gate="1" x="93.98" y="-223.52"/>
 <instance part="P-1" gate="1" x="93.98" y="-243.84"/>
 <instance part="GND7" gate="1" x="101.6" y="-238.76"/>
+<instance part="U$5" gate="G$1" x="-43.18" y="-279.4"/>
 </instances>
 <busses>
 </busses>
