@@ -6284,6 +6284,11 @@ NS Package M08A</description>
 <part name="R33" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="100K"/>
 <part name="R34" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="1K"/>
 <part name="R35" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="1K"/>
+<part name="C18" library="rcl" deviceset="C-EU" device="C0603" value="0.1uF"/>
+<part name="C20" library="rcl" deviceset="C-EU" device="C0603" value="0.1uF"/>
+<part name="C21" library="rcl" deviceset="C-EU" device="C0603" value="0.1uF"/>
+<part name="P+14" library="supply1" deviceset="+12V" device=""/>
+<part name="P-2" library="supply1" deviceset="-12V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -6428,6 +6433,14 @@ NS Package M08A</description>
 <instance part="R33" gate="G$1" x="5.08" y="-365.76"/>
 <instance part="R34" gate="G$1" x="127" y="-320.04"/>
 <instance part="R35" gate="G$1" x="124.46" y="-360.68"/>
+<instance part="IC2" gate="P" x="-60.96" y="-396.24"/>
+<instance part="IC4" gate="P" x="-43.18" y="-396.24"/>
+<instance part="IC3" gate="P" x="-25.4" y="-396.24"/>
+<instance part="C18" gate="G$1" x="-55.88" y="-396.24"/>
+<instance part="C20" gate="G$1" x="-38.1" y="-396.24"/>
+<instance part="C21" gate="G$1" x="-20.32" y="-396.24"/>
+<instance part="P+14" gate="1" x="-60.96" y="-381"/>
+<instance part="P-2" gate="1" x="-60.96" y="-411.48"/>
 </instances>
 <busses>
 </busses>
@@ -7097,6 +7110,32 @@ NS Package M08A</description>
 <pinref part="U$3" gate="G$1" pin="+12V"/>
 <wire x1="93.98" y1="-231.14" x2="88.9" y2="-231.14" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="IC2" gate="P" pin="V+"/>
+<wire x1="-60.96" y1="-388.62" x2="-60.96" y2="-386.08" width="0.1524" layer="91"/>
+<pinref part="C21" gate="G$1" pin="1"/>
+<wire x1="-60.96" y1="-386.08" x2="-55.88" y2="-386.08" width="0.1524" layer="91"/>
+<wire x1="-55.88" y1="-386.08" x2="-43.18" y2="-386.08" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="-386.08" x2="-38.1" y2="-386.08" width="0.1524" layer="91"/>
+<wire x1="-38.1" y1="-386.08" x2="-25.4" y2="-386.08" width="0.1524" layer="91"/>
+<wire x1="-25.4" y1="-386.08" x2="-20.32" y2="-386.08" width="0.1524" layer="91"/>
+<wire x1="-20.32" y1="-386.08" x2="-20.32" y2="-393.7" width="0.1524" layer="91"/>
+<pinref part="IC3" gate="P" pin="V+"/>
+<wire x1="-25.4" y1="-386.08" x2="-25.4" y2="-388.62" width="0.1524" layer="91"/>
+<junction x="-25.4" y="-386.08"/>
+<pinref part="IC4" gate="P" pin="V+"/>
+<wire x1="-43.18" y1="-386.08" x2="-43.18" y2="-388.62" width="0.1524" layer="91"/>
+<junction x="-43.18" y="-386.08"/>
+<pinref part="C20" gate="G$1" pin="1"/>
+<wire x1="-38.1" y1="-393.7" x2="-38.1" y2="-386.08" width="0.1524" layer="91"/>
+<junction x="-38.1" y="-386.08"/>
+<pinref part="C18" gate="G$1" pin="1"/>
+<wire x1="-55.88" y1="-386.08" x2="-55.88" y2="-393.7" width="0.1524" layer="91"/>
+<junction x="-55.88" y="-386.08"/>
+<pinref part="P+14" gate="1" pin="+12V"/>
+<wire x1="-60.96" y1="-383.54" x2="-60.96" y2="-386.08" width="0.1524" layer="91"/>
+<junction x="-60.96" y="-386.08"/>
+</segment>
 </net>
 <net name="N$6" class="0">
 <segment>
@@ -7181,6 +7220,32 @@ NS Package M08A</description>
 <pinref part="P-1" gate="1" pin="-12V"/>
 <wire x1="88.9" y1="-236.22" x2="93.98" y2="-236.22" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="-236.22" x2="93.98" y2="-241.3" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="IC2" gate="P" pin="V-"/>
+<wire x1="-60.96" y1="-403.86" x2="-60.96" y2="-406.4" width="0.1524" layer="91"/>
+<pinref part="C21" gate="G$1" pin="2"/>
+<wire x1="-60.96" y1="-406.4" x2="-55.88" y2="-406.4" width="0.1524" layer="91"/>
+<wire x1="-55.88" y1="-406.4" x2="-43.18" y2="-406.4" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="-406.4" x2="-38.1" y2="-406.4" width="0.1524" layer="91"/>
+<wire x1="-38.1" y1="-406.4" x2="-25.4" y2="-406.4" width="0.1524" layer="91"/>
+<wire x1="-25.4" y1="-406.4" x2="-20.32" y2="-406.4" width="0.1524" layer="91"/>
+<wire x1="-20.32" y1="-406.4" x2="-20.32" y2="-401.32" width="0.1524" layer="91"/>
+<pinref part="IC3" gate="P" pin="V-"/>
+<wire x1="-25.4" y1="-403.86" x2="-25.4" y2="-406.4" width="0.1524" layer="91"/>
+<junction x="-25.4" y="-406.4"/>
+<pinref part="IC4" gate="P" pin="V-"/>
+<wire x1="-43.18" y1="-403.86" x2="-43.18" y2="-406.4" width="0.1524" layer="91"/>
+<junction x="-43.18" y="-406.4"/>
+<pinref part="C18" gate="G$1" pin="2"/>
+<wire x1="-55.88" y1="-401.32" x2="-55.88" y2="-406.4" width="0.1524" layer="91"/>
+<junction x="-55.88" y="-406.4"/>
+<pinref part="C20" gate="G$1" pin="2"/>
+<wire x1="-38.1" y1="-401.32" x2="-38.1" y2="-406.4" width="0.1524" layer="91"/>
+<junction x="-38.1" y="-406.4"/>
+<pinref part="P-2" gate="1" pin="-12V"/>
+<wire x1="-60.96" y1="-406.4" x2="-60.96" y2="-408.94" width="0.1524" layer="91"/>
+<junction x="-60.96" y="-406.4"/>
 </segment>
 </net>
 <net name="SCL" class="0">
